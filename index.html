@@ -61,6 +61,39 @@
             color: #fff;
             font-size: 1.5rem;
         }
+        /* Picture templates */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+            margin-top: 40px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* Animations */
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0%);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -73,24 +106,20 @@
         </nav>
     </header>
     <main>
-        <section id="about">
+        <section id="about" class="animated-section">
             <h2>About Me</h2>
             <p>Welcome to my portfolio website! I'm a computer scientist and indie video game developer passionate about creating engaging experiences.</p>
         </section>
-        <section id="projects">
+        <section id="projects" class="animated-section">
             <h2>Projects</h2>
-            <p>Check out some of my latest projects:</p>
-            <div class="project">
-                <h3>Game Title 1</h3>
-                <p>Description of the project goes here.</p>
+            <div class="gallery">
+                <img src="project1.jpg" alt="Project 1">
+                <img src="project2.jpg" alt="Project 2">
+                <img src="project3.jpg" alt="Project 3">
+                <!-- Add more project images -->
             </div>
-            <div class="project">
-                <h3>Game Title 2</h3>
-                <p>Description of the project goes here.</p>
-            </div>
-            <!-- Add more projects as needed -->
         </section>
-        <section id="contact">
+        <section id="contact" class="animated-section">
             <h2>Contact Me</h2>
             <p>Feel free to reach out:</p>
             <div class="social-icons">
@@ -104,5 +133,17 @@
     <footer>
         <p>&copy; 2024 Ian Wu. All rights reserved.</p>
     </footer>
+    <script>
+        // Smooth scroll to section
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
