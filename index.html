@@ -22,7 +22,7 @@
             text-align: center;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
             /* animation: bounce 10s ease infinite alternate; */
-            animation: slideIn 1s ease-in-out;
+            animation: slideInHeader 1s ease-in-out;
         }
         @keyframes bounce {
             0% {
@@ -30,6 +30,14 @@
             }
             100% {
                 transform: translateY(0px);
+            }
+        }
+        @keyframes slideInHeader {
+            0% {
+                    transform: translateY(0%);
+            }
+            100% {
+                    transform: translateY(100%);
             }
         }
         header h1 {
