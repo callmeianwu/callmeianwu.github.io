@@ -11,8 +11,8 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
-            color: #fff;
+            background-color: #f0f0f0;
+            color: #333;
             line-height: 1.6;
         }
         a {
@@ -21,8 +21,8 @@
         }
         /* Header styles */
         header {
-            background-color: #000;
-            color: #0f0;
+            background-color: #333;
+            color: #fff;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
@@ -37,7 +37,7 @@
         header h2 {
             font-size: 1.5rem;
             margin: 20px 0;
-            color: #0f0;
+            color: #aaa;
             font-family: 'Courier New', monospace;
         }
         /* Navigation styles */
@@ -49,12 +49,12 @@
         nav a {
             margin: 0 15px;
             font-size: 1.2rem;
-            color: #0f0;
+            color: #333;
             transition: color 0.3s ease;
             font-family: 'Courier New', monospace;
         }
         nav a:hover {
-            color: #0a0;
+            color: #666;
         }
         /* Main content styles */
         main {
@@ -65,69 +65,71 @@
             font-size: 1.2rem;
             margin-bottom: 20px;
         }
-        /* Fun animations */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Features section styles */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
+            margin-top: 40px;
         }
-        @keyframes matrixEffect {
-            0% {
-                opacity: 0;
-                transform: translateY(-100%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .feature {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
-        .fun-header {
-            animation: matrixEffect 2s ease-in-out infinite alternate;
-            font-family: 'Courier New', monospace;
+        .feature:hover {
+            transform: translateY(-10px);
         }
-        .fun-shape {
-            width: 100px;
-            height: 100px;
-            background-color: #00ff00;
-            border-radius: 50%;
-            position: absolute;
-            animation: fadeInUp 1s ease-in-out infinite alternate;
+        .feature i {
+            font-size: 2rem;
+            color: #333;
         }
-        .shape-1 {
-            top: 100px;
-            left: 20%;
+        .feature h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #333;
         }
-        .shape-2 {
-            top: 250px;
-            left: 60%;
-        }
-        .shape-3 {
-            top: 500px;
-            left: 80%;
+        .feature p {
+            font-size: 1.2rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1 class="fun-header">Welcome to My Portfolio</h1>
+        <h1>Welcome to My Portfolio</h1>
         <h2>Computer Scientist | Indie Video Game Developer</h2>
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="fun-shape shape-1"></div>
-        <div class="fun-shape shape-2"></div>
-        <div class="fun-shape shape-3"></div>
     </header>
     <main>
-        <p>I'm Ian Wu, and I'm passionate about creating innovative experiences through code and games.</p>
-        <a href="#about" class="btn">Learn More</a>
+        <section class="features">
+            <div class="feature">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Creative Design</h3>
+                <p>Unique and visually appealing design that stands out.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-code"></i>
+                <h3>Clean Code</h3>
+                <p>Well-organized and maintainable code for efficient development.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-cogs"></i>
+                <h3>Functionality</h3>
+                <p>Highly functional and user-friendly interface for seamless navigation.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-rocket"></i>
+                <h3>Performance</h3>
+                <p>Optimized performance for fast loading and smooth user experience.</p>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Ian Wu. All rights reserved.</p>
