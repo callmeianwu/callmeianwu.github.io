@@ -11,8 +11,8 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #000;
+            color: #fff;
             line-height: 1.6;
         }
         a {
@@ -21,15 +21,24 @@
         }
         /* Header styles */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #000;
+            color: #0f0;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        header h2 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
         }
         /* Navigation styles */
         nav {
@@ -40,6 +49,12 @@
         nav a {
             margin: 0 15px;
             font-size: 1.2rem;
+            color: #0f0;
+            transition: color 0.3s ease;
+            font-family: 'Courier New', monospace;
+        }
+        nav a:hover {
+            color: #0a0;
         }
         /* Main content styles */
         main {
@@ -48,102 +63,74 @@
         }
         main p {
             font-size: 1.2rem;
+            margin-bottom: 20px;
         }
-        /* Footer styles */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            color: #fff;
-            font-size: 1.5rem;
-        }
-        /* Picture templates */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-gap: 20px;
-            margin-top: 40px;
-        }
-        .gallery img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        /* Animations */
-        @keyframes slideInFromLeft {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0%);
-            }
-        }
-        @keyframes fadeIn {
+        /* Fun animations */
+        @keyframes fadeInUp {
             0% {
                 opacity: 0;
+                transform: translateY(30px);
             }
             100% {
                 opacity: 1;
+                transform: translateY(0);
             }
+        }
+        @keyframes matrixEffect {
+            0% {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fun-header {
+            animation: matrixEffect 2s ease-in-out infinite alternate;
+            font-family: 'Courier New', monospace;
+        }
+        .fun-shape {
+            width: 100px;
+            height: 100px;
+            background-color: #00ff00;
+            border-radius: 50%;
+            position: absolute;
+            animation: fadeInUp 1s ease-in-out infinite alternate;
+        }
+        .shape-1 {
+            top: 100px;
+            left: 20%;
+        }
+        .shape-2 {
+            top: 250px;
+            left: 60%;
+        }
+        .shape-3 {
+            top: 500px;
+            left: 80%;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Ian Wu</h1>
+        <h1 class="fun-header">Welcome to My Portfolio</h1>
+        <h2>Computer Scientist | Indie Video Game Developer</h2>
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="fun-shape shape-1"></div>
+        <div class="fun-shape shape-2"></div>
+        <div class="fun-shape shape-3"></div>
     </header>
     <main>
-        <section id="about" class="animated-section">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio website! I'm a computer scientist and indie video game developer passionate about creating engaging experiences.</p>
-        </section>
-        <section id="projects" class="animated-section">
-            <h2>Projects</h2>
-            <div class="gallery">
-                <img src="project1.jpg" alt="Project 1">
-                <img src="project2.jpg" alt="Project 2">
-                <img src="project3.jpg" alt="Project 3">
-                <!-- Add more project images -->
-            </div>
-        </section>
-        <section id="contact" class="animated-section">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out:</p>
-            <div class="social-icons">
-                <a href="mailto:ian@example.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/ian"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ian"><i class="fab fa-github"></i></a>
-                <!-- Add more social links as needed -->
-            </div>
-        </section>
+        <p>I'm Ian Wu, and I'm passionate about creating innovative experiences through code and games.</p>
+        <a href="#about" class="btn">Learn More</a>
     </main>
     <footer>
         <p>&copy; 2024 Ian Wu. All rights reserved.</p>
     </footer>
-    <script>
-        // Smooth scroll to section
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
